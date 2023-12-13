@@ -1,9 +1,15 @@
 # Tugas-Pert12
 
 Nama : Zulaeha
+
 NIM : 312210575
+
 Kelas : TI.22.A5
+
 Mata Kuliah : Pemrograman Mobile 1
+
+Dosen Pengampu : Donny Maulana, S.Kom.,M.M.S.I.
+
 ## Tugas
 ![tugas](https://github.com/syifaaurellia/fragment_test/assets/115867244/fb861b7f-9579-47f3-a830-8cc7d896afbf)
 ## Fill in All The Code in This Project :
@@ -424,7 +430,7 @@ public class ViewAdapter extends FragmentStateAdapter {
 > Hasil Run :
 
 
-https://github.com/syifaaurellia/fragment_test/assets/115867244/40848674-e30a-4b2d-8c22-cf735496ae66
+
 
 
 ## Selesai, Terima Kasih 
