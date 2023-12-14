@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-=> Membuat file fragment dengan cara klik kanan pada `MainActivity.java` lalu pilih dan klik fragment, setelah itu kita pilih dan klik fragment (Blank), setelah itu kita beri nama `ActionFragment`, `ComedyFragment`, `RomanceFragment`. Untuk file fragment sudah sekaligus dengan file layout xml nya (code berada pada bagian res `layout`)
+=> Membuat file fragment dengan cara klik kanan pada `MainActivity.java` lalu pilih dan klik fragment, setelah itu kita pilih dan klik fragment (Blank), setelah itu kita beri nama `ActionFragment`, `HororFragment`, `RomanceFragment`. Untuk file fragment sudah sekaligus dengan file layout xml nya (code berada pada bagian res `layout`)
 - `ActionFragment.java` :
 ```
 package com.example.fragment;
@@ -137,7 +137,7 @@ public class ActionFragment extends Fragment {
     }
 }
 ```
-- `ComedyFragment.java` :
+- `HororFragment.java` :
 ```
 package com.example.fragment;
 import android.os.Bundle;
@@ -149,13 +149,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-public class ComedyFragment extends Fragment {
+public class HororFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_comedy, container, false);
+        return inflater.inflate(R.layout.fragment_horor, container, false);
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -163,7 +163,7 @@ public class ComedyFragment extends Fragment {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.tab_comedy) {
+        if (item.getItemId() == R.id.tab_horor) {
             Toast.makeText(getActivity(), "Clicked on " + item.getTitle(), Toast.LENGTH_SHORT)
                     .show();
         }
@@ -369,7 +369,7 @@ public class ViewAdapter extends FragmentStateAdapter {
         android:src="@drawable/filmaction" />
 </FrameLayout>
 ```
-- `fragment_comedy.xml`
+- `fragment_horor.xml`
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -377,7 +377,7 @@ public class ViewAdapter extends FragmentStateAdapter {
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActionFragment">
+    tools:context=".HororFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -385,7 +385,8 @@ public class ViewAdapter extends FragmentStateAdapter {
         android:id="@+id/action_sinopsis"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="Sinopsis film : Ellen (Adinia Wirasti), pengacara yang sukses, adalah seorang single mom yang jarang bisa meluangkan waktu bagi anak tunggalnya Kiara (Aurora Ribero), yang akhirnya tumbuh sebagai remaja pemberontak yang lebih banyak melampiaskan emosinya di media sosial. Mereka tinggal bersama Agatha (Niniek L. Karim), ibunda Ellen yang sangat menyayangi Kiara. Ketika Agatha meninggal terkena serangan jantung, Kiara yang sejak kecil sangat dekat dengan Omanya langsung terguncang. Oleh psikolog, Ellen disarankan untuk mengajak Kiara berlibur, menghabiskan quality time untuk mengobati masa-masa di mana Ellen terlalu sibuk bekerja. Mereka pun pergi ke Sumba, menghabiskan saat-saat menyenangkan berdua. Kiara pulang dengan hati riang. Di Jakarta, Ellen langsung disambut masalah besar di kantor. Proyek besar yang sedang ia tangani bersama Iwan (Ernest Prakasa) terancam berantakan. Akhirnya karna sibuk, Ellen tidak menepati janjinya untuk menonton Kiara tampil di perlombaan talent show antar SMA yang sudah Kiara persiapkan sejak lama."
+        android:text="Sinopsis film : Film ini mengangkat mitos yang sudah lama dipercaya oleh sebagian besar masyarakat Indonesia, yaitu tentang sakralnya waktu maghrib. Mitos ini relevan dengan kalangan para orang tua dan anak-anak. Jika anak-anak masih berada di luar rumah dan mangkir dari kewajiban beribadah saat waktu maghrib tiba, anak-anak tersebut akan diculik oleh hantu. 
+Mitos tersebut direpresentasikan di dalam film ini dengan pendekatan yang sesuai dengan kehidupan sehari-hari. Karena itu, diharapkan film ini dapat membuat setiap penontonnya merasa relate dan dapat mengambil nilai moral yang ada di film WAKTU MAGHRIB."
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="15sp"
@@ -396,7 +397,7 @@ public class ViewAdapter extends FragmentStateAdapter {
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="1029dp"
-        android:src="@drawable/filmcomedy" />
+        android:src="@drawable/filmhoror" />
 </FrameLayout>
 ```
 - `fragment_romance.xml` :
@@ -442,7 +443,7 @@ public class ViewAdapter extends FragmentStateAdapter {
         android:icon="@drawable/baseline_more_vert_24"
         android:title="Action"/>
     <item
-        android:id="@+id/tab_comedy"
+        android:id="@+id/tab_horor"
         android:icon="@drawable/baseline_more_vert_24"
         android:title="Comedy"/>
     <item
