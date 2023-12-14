@@ -455,7 +455,7 @@ Mitos tersebut direpresentasikan di dalam film ini dengan pendekatan yang sesuai
 
 > Hasil Run :
 
-https://github.com/zulaeha168/Tugas-Pert12/assets/130324650/d79865df-458d-4337-8687-7cfc3b6f6864
+https://github.com/zulaeha168/Tugas-Pert12/assets/130324650/84ba7a06-4a2c-46d5-abad-14e8a488762e
 
 
 
