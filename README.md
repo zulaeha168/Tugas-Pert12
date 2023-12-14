@@ -13,6 +13,7 @@ Dosen Pengampu : Donny Maulana, S.Kom.,M.M.S.I.
 ## Tugas
 
 <img width="603" alt="tugasfragment" src="https://github.com/zulaeha168/Tugas-Pert12/assets/130324650/63846bf6-505b-456e-9ff5-741456108f00">
+
 ## Fill in All The Code in This Project :
 > 1. ***Gradle Script*** => `build.gradle.kts (Module :app)`
 ```
