@@ -223,7 +223,8 @@ public class ViewAdapter extends FragmentStateAdapter {
             case 0:
                 return new ActionFragment();
             case 1:
-                return new ComedyFragment();
+                return new
+Horor Fragment();
             case 2:
                 return new RomanceFragment();
             default:
