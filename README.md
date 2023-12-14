@@ -11,7 +11,8 @@ Mata Kuliah : Pemrograman Mobile 1
 Dosen Pengampu : Donny Maulana, S.Kom.,M.M.S.I.
 
 ## Tugas
-![tugas](https://github.com/syifaaurellia/fragment_test/assets/115867244/fb861b7f-9579-47f3-a830-8cc7d896afbf)
+
+<img width="603" alt="tugasfragment" src="https://github.com/zulaeha168/Tugas-Pert12/assets/130324650/63846bf6-505b-456e-9ff5-741456108f00">
 ## Fill in All The Code in This Project :
 > 1. ***Gradle Script*** => `build.gradle.kts (Module :app)`
 ```
@@ -56,7 +57,7 @@ dependencies {
 > 2. ***java***
 => `MainActivity.java`
 ```
-package com.tabexperiment;
+package com.example.fragment;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 import android.annotation.SuppressLint;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 => Membuat file fragment dengan cara klik kanan pada `MainActivity.java` lalu pilih dan klik fragment, setelah itu kita pilih dan klik fragment (Blank), setelah itu kita beri nama `ActionFragment`, `ComedyFragment`, `RomanceFragment`. Untuk file fragment sudah sekaligus dengan file layout xml nya (code berada pada bagian res `layout`)
 - `ActionFragment.java` :
 ```
-package com.tabexperiment;
+package com.example.fragment;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -137,7 +138,7 @@ public class ActionFragment extends Fragment {
 ```
 - `ComedyFragment.java` :
 ```
-package com.tabexperiment;
+package com.example.fragment;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -171,7 +172,7 @@ public class ComedyFragment extends Fragment {
 ```
 - `RomanceFragment.java` :
 ```
-package com.tabexperiment;
+package com.example.fragment;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -205,7 +206,7 @@ public class RomanceFragment extends Fragment {
 ```
 => Lalu buat java class dengan nama `ViewAdapter.java`, yang berisi code :
 ```
-package com.tabexperiment;
+package com.example.fragment;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -247,16 +248,17 @@ public class ViewAdapter extends FragmentStateAdapter {
     <color name="colorPrimary">#3F5185</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="birumuda">#ABCBFA</color>
     <color name="salem">#F8C6E6</color>
     <color name ="purple">#E3A2ED</color>
-    <color name="hijau">#92A676</color>
     <color name="biru">#8FC2EA</color>
     <color name="hijaumuda">#C2E69C</color>
-    <color name="kuning">#FFEB3B</color>
-    <color name="orange">#FF9800</color>
     <color name="cream">#E6C18A</color>
-    <color name="hijautua">#3F4A2F</color>
+    <color name="coklat">#65362c</color>
+    <color name="abu">#B0B0B2</color>
+    <color name="tosca">#70AE98</color>
+    <color name="soft">#AED9EA</color>
+    <color name="pastel">#5E96AE</color>
+</resources>
 </resources>
 ```
 => `themes`
@@ -264,20 +266,21 @@ public class ViewAdapter extends FragmentStateAdapter {
 ```
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.TabExperiment" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Base.Theme.fragment" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/biru</item>
+        <item name="colorPrimaryVariant">@color/hijaumuda</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/hijau</item>
-        <item name="colorSecondaryVariant">@color/hijaumuda</item>
+        <item name="colorSecondary">@color/pastel</item>
+        <item name="colorSecondaryVariant">@color/soft</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/cream</item>
-        <item name="android:navigationBarColor">@color/cream</item>
+        <item name="android:statusBarColor">@color/purple</item>
+        <item name="android:navigationBarColor">@color/purple</item>
         <!-- Customize your light theme here. -->
     </style>
+
     <style name="Theme.TabExperiment" parent="Base.Theme.TabExperiment" />
 </resources>
 ```
@@ -285,38 +288,45 @@ public class ViewAdapter extends FragmentStateAdapter {
 - `activity_main.xml` :
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".MainActivity">
+
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/hijau"
+        android:background="@color/pastel"
         app:tabSelectedTextColor="@color/white"
         app:tabIndicatorColor="@color/white"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="3dp"
         tools:ignore="MissingConstraints">
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Action"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="3dp" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Comedy" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Romance" />
     </com.google.android.material.tabs.TabLayout>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -325,6 +335,7 @@ public class ViewAdapter extends FragmentStateAdapter {
         android:background="@color/white"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="52dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 - `fragment_action.xml` :
@@ -336,21 +347,25 @@ public class ViewAdapter extends FragmentStateAdapter {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActionFragment">
+
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/action_sinopsis"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="Sinopsis film : Pada pembukaannya, Clint Barton sedang bersama keluarganya di pertanian, namun kebahagiaan mereka hancur ketika putrinya menghilang bersamaan dengan jentikan jari Thanos yang menyebabkan kehancuran besar, menghapus separuh kehidupan di alam semesta. Avengers yang tersisa, termasuk Nebula dan Tony Stark yang kembali ke Bumi, menyusun rencana untuk mencuri kembali Batu Keabadian dan membalikkan tindakan Thanos. Namun, setelah menemukan Thanos telah menghancurkan batu tersebut, mereka berkonfrontasi dengan musuh mereka.  Lima tahun kemudian, Scott Lang kembali dari alam kuantum dan memberi tahu Avengers bahwa mereka dapat menggunakan alam kuantum untuk melakukan perjalanan waktu dan mengambil kembali batu sebelum Thanos menggunakannya. Avengers menyusun rencana dan mengumpulkan kembali anggotanya, termasuk Thor yang kehilangan semangat. Dengan Stark, mereka berhasil mengembangkan mesin waktu dan melakukan perjalanan ke masa lalu untuk mengambil kembali batu-batu keabadian.  Menghadapi berbagai tantangan dan pengorbanan, termasuk kematian Natasha Romanoff, Avengers berhasil mendapatkan batu-batu tersebut. Dalam pertempuran akhir melawan Thanos, Stark mengorbankan dirinya sendiri untuk menggunakan Batu Keabadian dan menghancurkan musuh serta pasukannya. Setelah kemenangan, beberapa anggota Avengers memilih jalannya masing-masing, sementara Captain America memilih menjalani sisa hidupnya di masa lalu bersama Peggy Carter. Sebagai gantinya, ia menyerahkan perisai dan jubah Captain America kepada Sam Wilson."
+        android:text="Sinopsis film : Batman, letnan polisi James Gordon, dan jaksa wilayah Harvey Dent, yang membentuk aliansi untuk membongkar kejahatan terorganisir di Kota Gotham. Upaya mereka digagalkan oleh Joker, dalang anarkis yang berusaha menguji seberapa jauh Batman akan pergi untuk menyelamatkan kota dari kekacauan.Lalu Lau disembunyikan sebelum melarikan diri ke Hong Kong untuk menghindari ekstradisi.Dengan bantuan CEO Wayne Enterprises Lucius Fox, Batman menemukan Lau di Hong Kong dan mengembalikannya ke tahanan polisi Gotham. Gordon menyelamatkan walikota, Joker mengancam serangannya akan berlanjut sampai Batman mengungkapkan identitasnya. Dia menargetkan Dent saat makan malam penggalangan dana dan melempar Rachel keluar jendela, tapi Batman menyelamatkannya."
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="209dp"
-        android:layout_height="1260dp"
-        android:src="@drawable/film1" />
+        android:layout_width="200dp"
+        android:layout_height="1000dp"
+        android:src="@drawable/filmaction" />
 </FrameLayout>
 ```
 - `fragment_comedy.xml`
@@ -362,21 +377,25 @@ public class ViewAdapter extends FragmentStateAdapter {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActionFragment">
+
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/action_sinopsis"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="Sinopsis film : Pada pembukaannya, Clint Barton sedang bersama keluarganya di pertanian, namun kebahagiaan mereka hancur ketika putrinya menghilang bersamaan dengan jentikan jari Thanos yang menyebabkan kehancuran besar, menghapus separuh kehidupan di alam semesta. Avengers yang tersisa, termasuk Nebula dan Tony Stark yang kembali ke Bumi, menyusun rencana untuk mencuri kembali Batu Keabadian dan membalikkan tindakan Thanos. Namun, setelah menemukan Thanos telah menghancurkan batu tersebut, mereka berkonfrontasi dengan musuh mereka.  Lima tahun kemudian, Scott Lang kembali dari alam kuantum dan memberi tahu Avengers bahwa mereka dapat menggunakan alam kuantum untuk melakukan perjalanan waktu dan mengambil kembali batu sebelum Thanos menggunakannya. Avengers menyusun rencana dan mengumpulkan kembali anggotanya, termasuk Thor yang kehilangan semangat. Dengan Stark, mereka berhasil mengembangkan mesin waktu dan melakukan perjalanan ke masa lalu untuk mengambil kembali batu-batu keabadian.  Menghadapi berbagai tantangan dan pengorbanan, termasuk kematian Natasha Romanoff, Avengers berhasil mendapatkan batu-batu tersebut. Dalam pertempuran akhir melawan Thanos, Stark mengorbankan dirinya sendiri untuk menggunakan Batu Keabadian dan menghancurkan musuh serta pasukannya. Setelah kemenangan, beberapa anggota Avengers memilih jalannya masing-masing, sementara Captain America memilih menjalani sisa hidupnya di masa lalu bersama Peggy Carter. Sebagai gantinya, ia menyerahkan perisai dan jubah Captain America kepada Sam Wilson."
+        android:text="Sinopsis film : Ellen (Adinia Wirasti), pengacara yang sukses, adalah seorang single mom yang jarang bisa meluangkan waktu bagi anak tunggalnya Kiara (Aurora Ribero), yang akhirnya tumbuh sebagai remaja pemberontak yang lebih banyak melampiaskan emosinya di media sosial. Mereka tinggal bersama Agatha (Niniek L. Karim), ibunda Ellen yang sangat menyayangi Kiara. Ketika Agatha meninggal terkena serangan jantung, Kiara yang sejak kecil sangat dekat dengan Omanya langsung terguncang. Oleh psikolog, Ellen disarankan untuk mengajak Kiara berlibur, menghabiskan quality time untuk mengobati masa-masa di mana Ellen terlalu sibuk bekerja. Mereka pun pergi ke Sumba, menghabiskan saat-saat menyenangkan berdua. Kiara pulang dengan hati riang. Di Jakarta, Ellen langsung disambut masalah besar di kantor. Proyek besar yang sedang ia tangani bersama Iwan (Ernest Prakasa) terancam berantakan. Akhirnya karna sibuk, Ellen tidak menepati janjinya untuk menonton Kiara tampil di perlombaan talent show antar SMA yang sudah Kiara persiapkan sejak lama."
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="209dp"
-        android:layout_height="1260dp"
-        android:src="@drawable/film1" />
+        android:layout_width="200dp"
+        android:layout_height="1029dp"
+        android:src="@drawable/filmcomedy" />
 </FrameLayout>
 ```
 - `fragment_romance.xml` :
@@ -388,21 +407,26 @@ public class ViewAdapter extends FragmentStateAdapter {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RomanceFragment">
+
     <!-- TODO: Update blank fragment layout -->
+
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="222dp"
-        android:layout_height="1255dp"
-        android:src="@drawable/film3" />
+        android:layout_width="200dp"
+        android:layout_height="1009dp"
+        android:src="@drawable/filmromance" />
+
     <TextView
         android:id="@+id/romance_sinopsis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sinopsis film :  &quot;20th Century Girl&quot; mengisahkan Na Bo-ra, seorang siswi yang bersumpah untuk mengikuti Baek Hyun-jin demi sahabatnya yang sakit. Namun, Bo-ra malah jatuh cinta pada Poong Woon-ho, sahabat Hyun-jin. Dalam kebingungan cinta segitiga, Bo-ra menyembunyikan perasaannya agar tidak melukai sahabatnya yang ternyata mencintai Woon-ho. Ketika Woon-ho kembali ke Selandia Baru, Bo-ra dan Yeon-du tiba di stasiun kereta pada saat yang tepat, memungkinkan mereka mengakui perasaan mereka sebelum berpisah. Namun, Woon-ho tiba-tiba menghilang dari kehidupan Bo-ra, meninggalkan hatinya yang hancur.  Seiring waktu, Bo-ra masuk universitas dan menjalani kehidupan dewasa. Pada tahun 2019, ia menerima undangan pameran seni dari Joseph, adik laki-laki Woon-ho. Di sini, Bo-ra mengetahui bahwa Woon-ho telah meninggal dalam kecelakaan bertahun-tahun yang lalu. Joseph bersyukur pada Bo-ra karena mengenang saudaranya dan mengungkapkan bahwa momen terbahagia Woon-ho adalah bersama Bo-ra. Saat melihat video yang dibuat Woon-ho, Bo-ra merenung tentang kenangan indah yang mereka bagikan.  Dengan latar tahun 1999 dan 2019, &quot;20th Century Girl&quot; membawa penonton dalam perjalanan emosional Bo-ra yang penuh kebingungan cinta, pertemanan, dan kehilangan. Film ini menggambarkan kompleksitas hubungan manusia seiring waktu, dengan kisah yang menyentuh hati dan meninggalkan kesan mendalam."
+        android:text="Sinopsis film : Film ini bercerita tentang seorang remaja SMA bernama Nathan (Jefri Nichol) yang bertemu dengan Salma Avira (Amanda Rawles), akibat keterlambatan mereka mengikuti upacara pertama di sekolah baru.Nathan membantu Salma untuk masuk ke sekolah dengan menggunakan jalan pintas dan menghindarkan Salma dari hukuman.Nathan terkenal sebagai siswa yang nakal dan sering ikut tawuran di sekolah. Berbeda dengan Salma yang memiliki pergaulan baik dan juga tahu batasan dalam pergaulan. Namun hal ini malah membuat keduanya makin akrab.Suatu waktu Nathan mengakui perasaannya kepada Salma dan berusaha untuk mendapatkan hatinya. Awalnya Salma menolak, namun Salma akhirnya menaruh simpati kepada Nathan setelah tahu kerapuhan masa lalu Nathan.Akhirnya mereka saling jatuh cinta dan Salma membantu Nathan untuk menjadi pribadi yang lebih baik. Namun permasalahan muncul, pasalnya mantan kekasih Nathan hadir kembali ke kehidupan Nathan."
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
 </FrameLayout>
 ```
 => Pada directory `drawable` kita bisa tambahkan gambar untuk pict dari film yang ingin kita tampilkan, dan jangan lupa untuk menambahkan icon `baseline_more_vert_24.xml` dengan cara klik kanan pada `drawable` lalu klik New, setelah itu kita pilih dan klik Vector Asset. Setelah itu kita klik clip art lalu kita pilih icon nya, jika sudah ketemu kita klik OK lalu kita klik next
